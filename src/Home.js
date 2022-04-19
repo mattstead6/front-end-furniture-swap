@@ -1,5 +1,8 @@
 import Form from "./Form"
 import React, { useEffect, useState } from 'react'
+import ItemsContainer from './ItemsContainer'
+import RequestPage from "./RequestPage"
+import UserItemPage from "./UserItemPage"
 
 function Home() {
 
@@ -18,6 +21,8 @@ function Home() {
         <>
             <Form items={items} setItems={setItems} addItem={addItem} />
             <ItemsContainer items={items}/>
+            <RequestPage />
+            <UserItemPage />
         </>
     )
 }

@@ -1,26 +1,36 @@
 import React, { useState } from 'react'
 import './Item.css'
+import Modal from './Modal'
 
-function Item({item}) {
+function Item({item, setShowClickedItem}) {
 
   const {item_name, description, original_pricing, condition, image_url} = item
+  
 
-  const [renderImage, setRenderImage] = useState("true")
+  const [renderDetails, setRenderDetails] = useState(false)
 
-  function toggleRenderImage() {
-    setRenderImage(prev => !prev)
+
+
+  function displayDetails () {
+    // setRenderDetails(renderDetails => !renderDetails)
+    setShowClickedItem(item)
   }
+  
 
   return (
+   
     <div className="itemCard">
-      {renderImage? <img src={image_url} alt={item_name} onClick={toggleRenderImage}/> :
-      <>
-      <h2>{item_name}</h2>
-      <p>{description}</p>
-      <p>{condition}</p>
-      </>
-      }
-    </div>
+      <img src={image_url} alt={`item of ${item_name}`} onClick={displayDetails}/>
+  
+    {!renderDetails ? null : 
+   <Modal item={item} setRenderDetails={setRenderDetails}/>
+    }
+
+      </div> 
+
+
+
+ 
   );
 }
 
