@@ -8,14 +8,16 @@ const [items, setItems] = useState([])
 useEffect(() => {
     fetch('http://localhost:9292/items')
     .then(res => res.json())
-    .then(items => console.log(items))
+    .then(items => setItems(items))
 }, [])
-    return(
-<>
-<ItemsContainer/>
-</>
-    )
 
+    return(
+        <div>
+            <h1>SWAP'T</h1>
+                <ItemsContainer items={items}/>
+        </div>
+
+    )
 }
 
 export default Home

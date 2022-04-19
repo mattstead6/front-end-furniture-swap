@@ -1,0 +1,16 @@
+.itemCard {
+    background-color: blue;
+    width: 18rem;
+    height: 18rem;
+    border: black solid .5px;
+}
+
+.itemCard img {
+    width: 100%;
+    height: 100%;
+}
+
+/* .buttonContainer {
+    width: 18rem;
+    height: 10rem;
+} */
