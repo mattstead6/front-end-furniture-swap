@@ -1,23 +1,25 @@
-import ItemsContainer from './ItemsContainer'
+import Form from "./Form"
 import React, { useEffect, useState } from 'react'
 
 function Home() {
 
-const [items, setItems] = useState([])
+    const [items, setItems] = useState([])
 
-useEffect(() => {
-    fetch('http://localhost:9292/items')
-    .then(res => res.json())
-    .then(items => setItems(items))
-}, [])
+    useEffect(() => {
+        fetch('http://localhost:9292/items')
+            .then(res => res.json())
+            .then(items => setItems(items))
+    }, [])
 
-    return(
-        <div>
-            <h1>SWAP'T</h1>
-                <ItemsContainer items={items}/>
-        </div>
-
+    function addItem(newestItem) {
+        setItems([...items, newestItem])
+    }
+    return (
+        <>
+            <Form items={items} setItems={setItems} addItem={addItem} />
+            <ItemsContainer items={items}/>
+        </>
     )
 }
 
-export default Home
+export default Home; 
