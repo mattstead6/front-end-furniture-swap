@@ -3,7 +3,7 @@ import Item from './Item';
 import './ItemsContainer.css'
 import Modal from './Modal';
 
-function ItemsContainer({items, setShowClickedItem, showClickedItem}) {
+function ItemsContainer({items, setShowClickedItem, showClickedItem,}) {
  
   // const [showClickedItem, setShowClickedItem] = useState({})
 
