@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 function Modal({item, closeModal}) {
 
+    // console.log(item)
+
     const navigate = useNavigate()
 
     const {item_name, description, original_pricing, condition, image_url} = item

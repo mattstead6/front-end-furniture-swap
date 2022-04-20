@@ -3,13 +3,15 @@ import Item from './Item';
 import './ItemsContainer.css'
 import Modal from './Modal';
 
-function ItemsContainer({items}) {
+function ItemsContainer({items, setShowClickedItem, showClickedItem}) {
  
-  const [showClickedItem, setShowClickedItem] = useState({})
+  // const [showClickedItem, setShowClickedItem] = useState({})
 
   function closeModal() {
     setShowClickedItem({})
   }
+
+  // console.log(showClickedItem)
 
   return (
     <div >
