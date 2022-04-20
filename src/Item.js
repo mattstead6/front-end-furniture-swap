@@ -7,7 +7,7 @@ function Item({item, setShowClickedItem}) {
   const {item_name, description, original_pricing, condition, image_url} = item
   
 
-  const [renderDetails, setRenderDetails] = useState(false)
+  // const [renderDetails, setRenderDetails] = useState(false)
 
 
 
@@ -22,9 +22,7 @@ function Item({item, setShowClickedItem}) {
     <div className="itemCard">
       <img src={image_url} alt={`item of ${item_name}`} onClick={displayDetails}/>
   
-    {!renderDetails ? null : 
-   <Modal item={item} setRenderDetails={setRenderDetails}/>
-    }
+  
 
       </div> 
 
