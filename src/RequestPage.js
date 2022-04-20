@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 
 
-function RequestPage() {
+function RequestPage({userItems}) {
 
-
+console.log(userItems.items)
     return (
-      <p1>HELLO THERE</p1>
+      <p1>JASDKFASKDJFHASDF</p1>
     )
 }
 
