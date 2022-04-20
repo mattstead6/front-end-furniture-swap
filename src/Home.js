@@ -5,7 +5,7 @@ import RequestPage from "./RequestPage"
 import UserItemPage from "./UserItemPage"
 import { useNavigate } from "react-router-dom";
 
-function Home() {
+function Home({setShowClickedItem, showClickedItem}) {
 
     let navigate = useNavigate()
 
@@ -24,10 +24,8 @@ function Home() {
         <>
           <button onClick={() => navigate("/useritempage") }>MY ITEMS</button>
             <Form items={items} setItems={setItems} addItem={addItem} />
-            <ItemsContainer items={items}/>
+            <ItemsContainer items={items} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>
 
-    
-            {/* <UserItemPage /> */} 
         </>
     )
 }

@@ -9,6 +9,9 @@ import UserItemPage from './UserItemPage';
 function App() {
 
   const [userItems, setUserItems] = useState({})
+  const [showClickedItem, setShowClickedItem] = useState({})
+
+  console.log(showClickedItem)
 
       useEffect(() => {
       fetch('http://localhost:9292/users')
@@ -21,8 +24,10 @@ function App() {
     <>
     <Router>
     <Routes>
-      <Route path='/' element={<Home />}/>
-      <Route exact path="/request" element={<RequestPage userItems={userItems}/>}/>
+      <Route path='/' element={<Home showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
+   
+      <Route exact path="/request" element={<RequestPage userItems={userItems} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
+
       <Route exact path ="useritempage" element={<UserItemPage userItems={userItems}/>}/>
     
     </Routes>
