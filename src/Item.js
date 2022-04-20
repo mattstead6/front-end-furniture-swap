@@ -12,7 +12,6 @@ function Item({item, setShowClickedItem}) {
 
 
   function displayDetails () {
-    // setRenderDetails(renderDetails => !renderDetails)
     setShowClickedItem(item)
   }
   
@@ -27,10 +26,6 @@ function Item({item, setShowClickedItem}) {
     }
 
       </div> 
-
-
-
- 
   );
 }
 

@@ -1,10 +1,21 @@
 import Form from "./Form"
 import React, { useEffect, useState } from 'react'
 import ItemsContainer from './ItemsContainer'
+import Header from './Header'
 import RequestPage from "./RequestPage"
+// import {
+//     Routes,
+//     Route,
+//   } from "react-router-dom";
+// import UserItemPage from "./UserItemPage";
+import { useNavigate } from "react-router-dom";
 import UserItemPage from "./UserItemPage"
 
+
+
 function Home() {
+
+    const navigate = useNavigate()
 
     const [items, setItems] = useState([])
 
@@ -19,12 +30,21 @@ function Home() {
     }
     return (
         <>
-            <Form items={items} setItems={setItems} addItem={addItem} />
+            
+
+            <Header />
             <ItemsContainer items={items}/>
+            <Form items={items} setItems={setItems} addItem={addItem} />
             <RequestPage />
             <UserItemPage />
+
+
+            <button onClick={()=> navigate("/useritempage")}>SHOW MY ITEMS</button>
+
+
         </>
     )
 }
+
 
 export default Home; 

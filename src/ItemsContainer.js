@@ -25,10 +25,12 @@ function ItemsContainer({items}) {
       showClickedItem.id? <Modal closeModal={closeModal} item={showClickedItem}/>
       : null
       }
-      
     </div>
+
   )
 }
+
+
 
 export default ItemsContainer
 
