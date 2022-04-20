@@ -30,9 +30,32 @@
 }
 
 .modal-content img{
-    width: 30%;
-    height: 30%;
-    position:relative
+    width: 50%;
+    height: 60%;
+    position:relative;
+    margin-left: auto;
+    margin-right:auto;
+    display: block;
+}
+
+.modal-content #bttn {
+
+  position: relative;
+  left:96.4%;
+
+}
+
+.modal-content {
+     /* background-color: white;  */
+}
+
+.modal-content p {
+    font-family: "Lucida Console", "Courier New", monospace;
+    
+  }
+
+.info-about-item{
+    background-color: white;
 }
 
 /* .buttonContainer {

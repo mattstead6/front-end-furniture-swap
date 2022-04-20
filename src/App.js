@@ -1,10 +1,26 @@
 import React from 'react';
 import Home from './Home'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import './App.css';
+import RequestPage from './RequestPage';
+
 
 function App() {
+
+
+
   return (
-    <Home/>
+    <>
+    <Router>
+    <Routes>
+      <Route path='/' element={<Home />}/>
+   
+      <Route exact path="/request" element={<RequestPage/>}/>
+    
+    </Routes>
+    </Router>
+
+    </>
   )
 }
 

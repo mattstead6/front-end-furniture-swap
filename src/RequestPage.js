@@ -1,13 +1,11 @@
 import React from 'react'
 
 
-
-function RequestPage({}) {
-
+function RequestPage() {
 
 
     return (
-      console.log('hi')
+      <p1>HELLO THERE</p1>
     )
 }
 

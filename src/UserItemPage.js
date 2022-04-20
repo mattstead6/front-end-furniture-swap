@@ -2,7 +2,8 @@ import React from 'react'
 
 function UserItemPage() {
     return (
-console.log('hi')
+
+        console.log('j')
     )
 }
 
