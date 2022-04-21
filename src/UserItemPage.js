@@ -2,8 +2,9 @@ import React from 'react'
 import UserItems from './UserItems'
 import './UserItemPage.css'
 import { useNavigate } from "react-router-dom";
+import Form from './Form';
 
-function UserItemPage({userItems, deleteItem}) {
+function UserItemPage({userItems, deleteItem, items1, setItems, addItem}) {
 
   let navigate = useNavigate()
 
@@ -37,7 +38,7 @@ function UserItemPage({userItems, deleteItem}) {
         </div>
 
 
-
+<Form items={items1} setItems={setItems} addItem={addItem} />
 
 
       </>

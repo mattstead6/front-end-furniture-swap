@@ -11,9 +11,65 @@ function App() {
 
   const [userItems, setUserItems] = useState({})
   const [showClickedItem, setShowClickedItem] = useState({})
+  const [items, setItems] = useState([])
+  const [cart, setCart] = useState('')
+
+  useEffect(() => {
+    fetch('http://localhost:9292/items')
+        .then(res => res.json())
+        .then(items => setItems(items))
+}, [])
+
+// console.log(items)
+
+
+
+function addItem(newestItem) {
+    setItems([...items, newestItem])
+    setUserItems({...userItems, items: [...userItems.items, newestItem]})
+
+    // console.log(newestItem)    
+}
+
+function handleRequest (item1, item2) {
+  fetch(`http://localhost:9292/item/swap/${item1.id}/${item2.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    }
+  }
+  )
+
+  setItems(items.map(item => {
+    if(item.id === item1.id) {
+      return {...item, user_id: item2.user_id}
+    }
+    else if(item.id === item2.id){
+      return {...item, user_id: item1.user_id}
+    }
+    else {
+      return item
+    }
+  }))
+
+
+  setUserItems({...userItems, items: userItems.items.map( item => {
+    if(item.id === item1.id) {
+      return item2
+    }
+    else {
+      return item
+    }
+  })})
+}
+
+
+
 
 
   console.log(showClickedItem)
+  console.log(userItems)
+
 
       useEffect(() => {
       fetch('http://localhost:9292/users')
@@ -28,7 +84,7 @@ function App() {
     })
     setUserItems({...userItems, items: userItems.items.filter(item => item.id !== deletedItem.id)})
   }
-
+  console.log(userItems)
 
   return (
     <>
@@ -43,9 +99,9 @@ function App() {
     
     <Router>
     <Routes>
-      <Route path='/' element={<Home showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
-      <Route exact path="/request" element={<RequestPage userItems={userItems} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
-      <Route exact path ="useritempage" element={<UserItemPage userItems={userItems} deleteItem={deleteItem}/>}/>
+      <Route path='/' element={<Home showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem} items={items}/>}/>
+      <Route exact path="/request" element={<RequestPage handleRequest={handleRequest} cart={cart} setCart={setCart} userItems={userItems} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
+      <Route exact path ="useritempage" element={<UserItemPage userItems={userItems} deleteItem={deleteItem} items={items} setItems={setItems} addItem={addItem}/>}/>
     
     </Routes>
     </Router>

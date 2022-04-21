@@ -1,20 +1,22 @@
 import React, {useState, useEffect} from 'react'
+import { useNavigate } from "react-router-dom";
 import './RequestPage.css'
 import TradeImages from './TradeImages'
+import ConfirmModal from './ConfirmModal';
 
 
-function RequestPage({userItems, showClickedItem}) {
+function RequestPage({userItems, showClickedItem, setCart, cart, handleRequest}) {
 
     const [userInfo, setUserInfo] = useState({})
-    const [cart, setCart] = useState('')
+   
     // const [tradeableItems, setTradeableItems] = useState({})
 
     const {bio, full_name, location, items} = userItems
 
   
+    let navigate = useNavigate()
 
-
-console.log(items)
+   
 
    const mappedItems = items.map(item => {
         return <TradeImages 
@@ -30,10 +32,19 @@ console.log(items)
         .then(userData => setUserInfo(userData))
     },[])
 
+    // function handleRequest(){
+    //     // <ConfirmModal showClickedItem={showClickedItem} userItems={userItems}/>
+    //     console.log(items)
+    // }
+
 
 
     return (
         <>
+
+        <div className='button-container'>
+            <button onClick={() => navigate("/")} className='home-button'>Back To Home</button>
+        </div>
 
         <div className='product-card'>
             <p className='item-name'>{showClickedItem.item_name}</p>
@@ -53,8 +64,14 @@ console.log(items)
                 <h3>{userInfo.location}</h3>
                 <p>Bio: {userInfo.bio}</p>
             </div>
-            <div>
-                <img class='traded-item'src={cart} alt='iasdf'/>
+            <div className='cart-section'>
+                <h4>Select Item Below</h4>
+                <img className='traded-item' src={showClickedItem.image_url} alt='asdfsdf'/>
+                <img className='traded-item' src={'https://media2.giphy.com/media/OlYhrN7KKv7JIekBPd/giphy.gif?cid=790b7611f9eb79aee3c3ba922435f5d07a6fb987f5d03128&rid=giphy.gif&ct=s'} alt='asdfsdf'/>
+                <img class='traded-item'src={cart.image_url} alt='iasdf'/>
+                <h3>Press the request button to offer {userInfo.full_name} a swap</h3>
+                {/* <h4>If you wish to offer $ on top of the swap, press here</h4>
+                <button>OFFER $</button> */}
             </div>
                         <div className='card'>
                                 <h3>Profile: {full_name}</h3>
@@ -67,7 +84,7 @@ console.log(items)
 
         
 
-    <button className='request-bton'>REQUEST SWAP</button>
+    <button onClick={handleRequest(showClickedItem, cart)} className='request-bton'>REQUEST SWAP</button>
 <h1>Please select an item you would like to swap with {userInfo.full_name}</h1>
 
 

@@ -1,26 +1,17 @@
-import Form from "./Form"
 import React, { useEffect, useState } from 'react'
 import ItemsContainer from './ItemsContainer'
 import './Home.css'
 import { useNavigate } from "react-router-dom";
 
-function Home({setShowClickedItem, showClickedItem}) {
+function Home({setShowClickedItem, showClickedItem, items}) {
 
     let navigate = useNavigate()
 
-    const [items, setItems] = useState([])
+
     const [searchItem, setSearchItem] = useState("")
 
     
-    useEffect(() => {
-        fetch('http://localhost:9292/items')
-            .then(res => res.json())
-            .then(items => setItems(items))
-    }, [])
-
-    function addItem(newestItem) {
-        setItems([...items, newestItem])
-    }
+   
 
     function handleSearchInput (e) {
         setSearchItem(e.target.value)
@@ -46,7 +37,7 @@ function Home({setShowClickedItem, showClickedItem}) {
             </div>
 
             <ItemsContainer items={filteredListItem} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>
-            <Form items={items} setItems={setItems} addItem={addItem} />
+           
 
         </>
     )

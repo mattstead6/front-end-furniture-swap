@@ -8,7 +8,9 @@ function TradeImages({item, setCart}) {
     
     function handleClick(){
     
-        setCart(item.image_url)
+        setCart(item)
+ 
+        
     }
 
     return (
