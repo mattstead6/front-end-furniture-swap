@@ -1,18 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import './TradeImages.css'
 
-function TradeImages({item}) {
+function TradeImages({item, setCart}) {
 
+    
 
+    
     function handleClick(){
-        console.log('fo')
+    
+        setCart(item.image_url)
     }
 
     return (
 
-
+<>
             <img className="test" src={item.image_url} alt="idk" onClick={handleClick}/>
-    
+           
+</> 
 
     )
 }
