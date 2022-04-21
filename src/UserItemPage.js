@@ -1,19 +1,20 @@
 import React from 'react'
-import UserItemContainer from './UserItemContainer'
+import UserItems from './UserItems'
 import './UserItemPage.css'
 import { useNavigate } from "react-router-dom";
 
-function UserItemPage({userItems}) {
+function UserItemPage({userItems, deleteItem}) {
 
   let navigate = useNavigate()
 
-  // console.log(userItems)
+
   const {bio, full_name, location, items, image} = userItems
   
   const mappedUserItems = items.map(item => {
-    return <UserItemContainer 
+    return <UserItems 
       key={item.id}
       item={item}
+      deleteItem={deleteItem}
     />
   })
 

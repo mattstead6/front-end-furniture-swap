@@ -21,13 +21,13 @@ function App() {
           .then(data => setUserItems(data))
   }, [])
 
-  // function deleteItem (trashedItem) {
-  //   fetch('${trashedItem.id}'), {
-  //     method: "DELETE",
-  //   } 
-  //   setPlants(userItems.filter(item => item.id !== trasheditem.id))
-  //   //then send  deleteItem down userITemPage
-  // }
+
+  function deleteItem(deletedItem) {
+    fetch(`http://localhost:9292/itemdelete/${deletedItem.id}`, {
+      method: "DELETE",
+    })
+    setUserItems({...userItems, items: userItems.items.filter(item => item.id !== deletedItem.id)})
+  }
 
 
   return (
@@ -45,7 +45,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
       <Route exact path="/request" element={<RequestPage userItems={userItems} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
-      <Route exact path ="useritempage" element={<UserItemPage userItems={userItems}/>}/>
+      <Route exact path ="useritempage" element={<UserItemPage userItems={userItems} deleteItem={deleteItem}/>}/>
     
     </Routes>
     </Router>
