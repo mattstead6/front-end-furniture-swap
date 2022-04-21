@@ -3,6 +3,7 @@ import './Item.css'
 import { useNavigate } from "react-router-dom";
 
 
+
 function Modal({item, closeModal}) {
 
     // console.log(item)
@@ -16,15 +17,22 @@ function Modal({item, closeModal}) {
     return (
         <div className='modal'> 
             <div className='modal-content'> 
-                <button id='bttn' onClick={closeModal}>X</button>
+                <div className='bttndiv'>
+                    <button id='bttn' onClick={closeModal}>X</button>
+                </div>
                 <h2>Item: {item_name}</h2>
+
+
                 <img src={image_url} alt={`item of ${item_name}`}/>
+
+
+
                     <div className='info-about-item'>
                         <p>Description: {description}</p>
                         <p>Original Price: ${original_pricing}</p>
                         <p>Condition: {condition}/10</p>
                     </div>
-                    <button onClick={() => navigate("/request") }>REQUEST A TRADE</button>
+                    <button className="tradingButton" onClick={() => navigate("/request") }>REQUEST A TRADE</button>
           </div>
         </div>
     )

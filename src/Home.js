@@ -1,9 +1,8 @@
 import Form from "./Form"
 import React, { useEffect, useState } from 'react'
 import ItemsContainer from './ItemsContainer'
-import RequestPage from "./RequestPage"
-import { useNavigate } from "react-router-dom";
 import './Home.css'
+import { useNavigate } from "react-router-dom";
 
 function Home({setShowClickedItem, showClickedItem}) {
 
@@ -38,8 +37,14 @@ function Home({setShowClickedItem, showClickedItem}) {
     return (
         
         <>
-            <button className="button" onClick={() => navigate("/useritempage") }>MY ITEMS</button>
-            <input type="text" placeholder="Search for items" onChange={handleSearchInput}></input>
+            <div className="buttonContainer">
+            <button className="myItemsButton" onClick={() => navigate("/useritempage") }>MY ITEMS</button>
+            </div>
+            
+            <div className="inputContainer">
+            <input className="inputBox"type="text" placeholder="Search for items" onChange={handleSearchInput}></input>
+            </div>
+
             <ItemsContainer items={filteredListItem} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>
             <Form items={items} setItems={setItems} addItem={addItem} />
 
