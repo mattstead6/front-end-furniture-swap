@@ -1,0 +1,15 @@
+.input-Box {
+    width: 20%;
+    font-size: 1rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+    border: 1px solid #0a8f19;
+    border-radius: 0;
+    padding-left: 0.5rem;
+}
+
+.new-item-form {
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+}

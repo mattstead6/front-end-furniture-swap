@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './Form.css'
 
 function Form({addItem}){
 
@@ -37,27 +38,37 @@ function handleChange(e){
 
 
 return (
-        <div className='new-item-form'>
-            <h2>List New Item</h2>
+        <>
+         <h2>List New Item</h2>
+         <div className='new-item-form'>
         <form onSubmit={handleSubmit}>
+            <div>
             <label>Item:
-            <input name="item_name" value={formState.item_name} onChange={handleChange}></input>
+            <input className="input-Box" name="item_name" value={formState.item_name} onChange={handleChange}></input> 
             </label>
+            </div>
+
+            <div>
             <label>Description
-            <input name="description" value={formState.description} onChange={handleChange}></input>
+            <input className="input-Box" name="description" value={formState.description} onChange={handleChange}></input>
             </label>
+            </div>
+            
             <label>Original Pricing: 
-            <input name="original_pricing" value={formState.original_pricing} onChange={handleChange}></input>
+            <input className="input-Box" name="original_pricing" value={formState.original_pricing} onChange={handleChange}></input>
             </label>
             <label>Condition: 
-            <input name="condition" value={formState.condition} onChange={handleChange}></input>
+            <input className="input-Box" name="condition" value={formState.condition} onChange={handleChange}></input>
             </label>
             <label>Image URL: 
-            <input name="image_url" value={formState.image_url} onChange={handleChange}></input>
+            <input className="input-Box" name="image_url" value={formState.image_url} onChange={handleChange}></input>
             </label>
             <input type="submit" value="Submit"></input>
         </form>
         </div>
+        
+        </>
+        
 
     )
 }

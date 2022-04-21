@@ -11,7 +11,6 @@ function Home({setShowClickedItem, showClickedItem, items}) {
     const [searchItem, setSearchItem] = useState("")
 
     
-   
 
     function handleSearchInput (e) {
         setSearchItem(e.target.value)

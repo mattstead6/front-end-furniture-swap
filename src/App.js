@@ -37,9 +37,9 @@ function handleRequest (item1, item2) {
     headers: {
       "Content-Type": "application/json",
     }
-  }
-  )
-
+  })
+ .then(resp => resp.json())
+ .then(() => {  
   setItems(items.map(item => {
     if(item.id === item1.id) {
       return {...item, user_id: item2.user_id}
@@ -52,7 +52,6 @@ function handleRequest (item1, item2) {
     }
   }))
 
-
   setUserItems({...userItems, items: userItems.items.map( item => {
     if(item.id === item1.id) {
       return item2
@@ -60,7 +59,7 @@ function handleRequest (item1, item2) {
     else {
       return item
     }
-  })})
+  })})})
 }
 
 
@@ -94,9 +93,6 @@ function handleRequest (item1, item2) {
     </div>
 
 
-
-
-    
     <Router>
     <Routes>
       <Route path='/' element={<Home showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem} items={items}/>}/>
