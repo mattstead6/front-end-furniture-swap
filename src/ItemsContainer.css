@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     /* grid-template-rows: 18rem 18rem; */
-    row-gap: .05rem;
-    column-gap: 0px;
-    justify-content: center;
+    row-gap: .4rem;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 5%;
 }

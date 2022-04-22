@@ -8,7 +8,6 @@ function UserItemPage({userItems, deleteItem, items1, setItems, addItem}) {
 
   let navigate = useNavigate()
 
-
   const {bio, full_name, location, items, image} = userItems
   
   const mappedUserItems = items.map(item => {
@@ -19,7 +18,6 @@ function UserItemPage({userItems, deleteItem, items1, setItems, addItem}) {
     />
   })
 
- 
     return (
       <>
         <div className="homeButtonContainer">
@@ -27,7 +25,7 @@ function UserItemPage({userItems, deleteItem, items1, setItems, addItem}) {
         </div>
 
         <div className="userInfo">
-          <img img_src={image} alt={full_name}></img>
+          <img className="userImage" img_src={image} alt={full_name}></img>
           <h1>{full_name}</h1>
           <h3>Location: {location}</h3>
           <h3>Bio: {bio}</h3>

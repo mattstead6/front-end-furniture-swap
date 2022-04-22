@@ -39,34 +39,57 @@ function handleChange(e){
 
 return (
         <>
-         <h2>List New Item</h2>
+         <h2 className="newItemTitle">Add New Item You Want to Swap</h2>
          <div className='new-item-form'>
         <form onSubmit={handleSubmit}>
             <div>
-            <label>Item:
-            <input className="input-Box" name="item_name" value={formState.item_name} onChange={handleChange}></input> 
+            <label className="label">Item:
+                <div>
+                <input className="input-Box" name="item_name" value={formState.item_name} onChange={handleChange}></input>   
+                </div>
             </label>
             </div>
 
+
             <div>
-            <label>Description
-            <input className="input-Box" name="description" value={formState.description} onChange={handleChange}></input>
+            <label className="label">Description
+                <div>
+                <input className="input-Box" name="description" value={formState.description} onChange={handleChange}></input>
+                </div>
             </label>
             </div>
-            
-            <label>Original Pricing: 
-            <input className="input-Box" name="original_pricing" value={formState.original_pricing} onChange={handleChange}></input>
-            </label>
-            <label>Condition: 
-            <input className="input-Box" name="condition" value={formState.condition} onChange={handleChange}></input>
-            </label>
-            <label>Image URL: 
-            <input className="input-Box" name="image_url" value={formState.image_url} onChange={handleChange}></input>
-            </label>
-            <input type="submit" value="Submit"></input>
-        </form>
+
+        <div>
+        <label className="label">Original Pricing: 
+                <div>
+                <input className="input-Box" name="original_pricing" value={formState.original_pricing} onChange={handleChange}></input>
         </div>
-        
+        </label>
+        </div>
+
+
+        <div>       
+        <label className="label">Condition: 
+            <div>
+            <input className="input-Box" name="condition" value={formState.condition} onChange={handleChange}></input>
+            </div>
+        </label>
+        </div>
+
+        <div>
+        <label className="label">Image URL: 
+            <div>
+                <input className="input-Box" name="image_url" value={formState.image_url} onChange={handleChange}></input>
+            </div>
+        </label>
+        </div>
+
+        <div>
+            <input className="submitButton" type="submit" value="Submit"></input>
+        </div>
+
+        </form>
+        </div> 
         </>
         
 

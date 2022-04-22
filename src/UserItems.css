@@ -3,7 +3,6 @@
     height: 30rem;
     border: black solid .5px;
     position: relative;
-
 }
 
 .useritemcard img {
@@ -13,4 +12,34 @@
     height: 50%;
     top: 0;
     left: 0;
+}
+
+.deleteButton {
+    border-color: gray;
+    background-color: white;
+    font-size: 16px;
+    border: solid #0a8f19;
+    border-width: thin;
+    font-size: 1.5;
+    font-weight: bold;
+    padding: 10px 12px;
+}
+
+.deleteButton:Hover {
+    background-color: #d4d2d4;
+}
+
+.userItemImage {
+    width: 400px;
+    height: 400px;
+    position:relative; 
+    margin-left: auto;
+    margin-right:auto;
+    display: block;
+    margin-top: 2%;
+}
+
+.usersItemDetails, .btnContainer {
+    margin-left: 12px;
+    margin-right: 12px;
 }

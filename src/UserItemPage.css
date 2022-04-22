@@ -4,6 +4,8 @@
     /* grid-template-rows: 18rem 18rem; */
     row-gap: 1rem;
     column-gap: 0px;
+    justify-items: center;
+    align-items: center;
 }
 
 .backToHomeButton {
@@ -16,6 +18,11 @@
     font-weight: bold;
     padding: 10px 12px;
 }
+
+.backToHomeButton:hover {
+    background-color: #d4d2d4;
+}
+
 
 .homeButtonContainer {
     display: flex;
@@ -38,3 +45,4 @@
     font-family: 'Poppins', sans-serif;
     font-size: 1.5;
 }
+

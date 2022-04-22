@@ -14,6 +14,17 @@
     left: 0;
 } 
 
+.itemContainer {
+    transition: 1s ease;
+}
+
+.itemContainer:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+    }
+
 /* EVERYTHING IN THE MODAL */
 
 .modal {
@@ -31,10 +42,19 @@
     
 }
 
-.modal-content img{
-    width: 50%;
-    height: 60%;
-    position:relative;
+.modal.scroll {
+    /* margin:4px, 4px; */
+        padding:4px;
+        width: 700px;
+        height: 800px;
+        overflow-x: hidden;
+        overflow-y: auto;
+}
+
+.image {
+    width: 400px;
+    height: 400px;
+    position:relative; 
     margin-left: auto;
     margin-right:auto;
     display: block;
@@ -54,24 +74,24 @@
   font-size: 1.5;
   font-weight: bold;
   padding: 10px 12px;
-  margin-top: 5%;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
-.modal-content {
-     /* background-color: white;  */
-}
 
 .modal-content p {
-    font-family: "Lucida Console", "Courier New", monospace;
+    /* font-family: "Lucida Console", "Courier New", monospace; */
+    font-family: 'Rubik', sans-serif;
     font-size: 1.2rem;
     
   }
 
 .info-about-item{
     background-color: white;
-    margin-top: 10%;
+    margin-top: 4%;
     margin-left: 3%;
     margin-right: 3%;
+    padding: 3px;
 }
 
 .tradingButton {
@@ -83,8 +103,9 @@
     font-size: 1.5;
     font-weight: bold;
     padding: 10px 12px;
-    margin-top: 5%;
-    margin-left: 5%;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .modal-content #h2 {

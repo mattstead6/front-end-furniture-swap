@@ -5,8 +5,6 @@ import './App.css';
 import RequestPage from './RequestPage';
 import UserItemPage from './UserItemPage';
 
-
-
 function App() {
 
   const [userItems, setUserItems] = useState({})
@@ -22,12 +20,9 @@ function App() {
 
 // console.log(items)
 
-
-
 function addItem(newestItem) {
     setItems([...items, newestItem])
     setUserItems({...userItems, items: [...userItems.items, newestItem]})
-
     // console.log(newestItem)    
 }
 
@@ -61,10 +56,6 @@ function handleRequest (item1, item2) {
     }
   })})})
 }
-
-
-
-
 
   console.log(showClickedItem)
   console.log(userItems)
