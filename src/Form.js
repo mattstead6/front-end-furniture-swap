@@ -25,6 +25,7 @@ function Form({addItem}){
                     original_pricing: formState.original_pricing,
                     condition: formState.condition,
                     image_url: formState.image_url,
+                    user_id: formState.user_id
             })
         })
         .then(res => res.json())
