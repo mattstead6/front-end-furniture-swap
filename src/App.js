@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import './App.css';
 import RequestPage from './RequestPage';
 import UserItemPage from './UserItemPage';
+// import ConfirmModal from './ConfirmModal';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
   const [showClickedItem, setShowClickedItem] = useState({})
   const [items, setItems] = useState([])
   const [cart, setCart] = useState('')
+  // const [requestClicked, setRequestClicked] = useState(false)
 
   useEffect(() => {
     fetch('http://localhost:9292/items')
@@ -18,7 +20,7 @@ function App() {
         .then(items => setItems(items))
 }, [])
 
-// console.log(items)
+// console.log(cart)
 
 function addItem(newestItem) {
     setItems([...items, newestItem])
@@ -27,6 +29,9 @@ function addItem(newestItem) {
 }
 
 function handleRequest (item1, item2) {
+
+  // <ConfirmModal cart = {cart} showClickedItem={showClickedItem} />
+
   fetch(`http://localhost:9292/item/swap/${item1.id}/${item2.id}`, {
     method: "PATCH",
     headers: {
@@ -36,6 +41,7 @@ function handleRequest (item1, item2) {
  .then(resp => resp.json())
  .then(() => {  
   setItems(items.map(item => {
+
     if(item.id === item1.id) {
       return {...item, user_id: item2.user_id}
     }
@@ -54,11 +60,12 @@ function handleRequest (item1, item2) {
     else {
       return item
     }
-  })})})
+  })
+})
+})
 }
 
-  console.log(showClickedItem)
-  console.log(userItems)
+
 
 
       useEffect(() => {

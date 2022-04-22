@@ -9,7 +9,6 @@ function TradeImages({item, setCart}) {
     function handleClick(){
     
         setCart(item)
- 
         
     }
 

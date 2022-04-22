@@ -1,7 +1,7 @@
 .userImage  {
-    width: 100%;
-    height: 70%;
-    /* border-radius: 50%;  */
+    width: 70%;
+    height: 50%;
+    border-radius: 50%; 
 } 
 .selected-item {
     width: 100%;
@@ -15,22 +15,28 @@
   max-width: 300px;
   /* margin-left: 8%; */
   text-align: center;
+ 
   /* display: flex; */
-  display:flex;
-  flex-direction: column;
+  /* display:flex; */
+  /* flex-direction: column; */
+  
 }
+
+
 
 .card-container {
   display:grid;
   grid-template-columns: repeat(3,1fr);
+  margin-right: 1%;
   margin-left: 10%
+  
 }
 
 .traded-item {
   margin-top: 10%;
     width: 30%;
     height: 30%;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 
 
@@ -87,10 +93,41 @@
 
 .cart-section {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 700px;
+  /* max-width: 700px; */ 
 
-  margin-right: 35%;
+margin-right: 30%;
+  /* margin-left: 25%; */ 
   text-align: center;
   font-family: arial;
+  display:block
 }
 
+.home-button {
+  border-color: gray;
+  background-color: white;
+  font-size: 18px;
+  border: solid #0a8f19;
+  border-width: thin;
+  font-size: 1.5;
+  font-weight: bold;
+  padding: 10px 12px;
+}
+
+.home-button:hover{
+  background-color: #d4d2d4;
+}
+
+.home-button-container {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 3%;
+  margin-right: 10%
+}
+
+.swap {
+  margin-top: 30%;
+}
+
+/* .enter-dol{
+  margin-top: 50%;
+} */

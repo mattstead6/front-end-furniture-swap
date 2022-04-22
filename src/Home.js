@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ItemsContainer from './ItemsContainer'
 import './Home.css'
 import { useNavigate } from "react-router-dom";
+import ConfirmModal from './ConfirmModal';
 
 function Home({setShowClickedItem, showClickedItem, items}) {
 
