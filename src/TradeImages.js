@@ -2,10 +2,6 @@ import React, {useState} from "react";
 import './TradeImages.css'
 
 function TradeImages({item, setCart}) {
-
-    
-
-    
     function handleClick(){
     
         setCart(item)
@@ -15,8 +11,9 @@ function TradeImages({item, setCart}) {
     return (
 
 <>
-            <img className="test" src={item.image_url} alt="idk" onClick={handleClick}/>
-           
+    <div className="imageCardContainer">
+    <img className="test" src={item.image_url} alt="idk" onClick={handleClick}/>
+    </div> 
 </> 
 
     )
