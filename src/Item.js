@@ -10,13 +10,9 @@ function Item({item, setShowClickedItem}) {
   }
   
   return (
-   
-    <div className="itemContainer">
     <div className="itemCard">
       <img src={image_url} alt={`item of ${item_name}`} onClick={displayDetails}/>
     </div> 
-    </div>
-
   );
 }
 

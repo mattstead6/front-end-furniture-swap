@@ -23,6 +23,7 @@ function ItemsContainer({items, setShowClickedItem, showClickedItem,}) {
         />
         
       })}</div>
+      
       { 
       showClickedItem.id? <Modal closeModal={closeModal} item={showClickedItem}/>
       : null

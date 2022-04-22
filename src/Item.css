@@ -14,15 +14,16 @@
     left: 0;
 } 
 
-.itemContainer {
+.itemCard {
     transition: 1s ease;
 }
 
-.itemContainer:hover{
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-    transition: 1s ease;
+.itemCard:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: .5s ease;
+    z-index: 1;
     }
 
 /* EVERYTHING IN THE MODAL */

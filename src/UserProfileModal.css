@@ -1,0 +1,29 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    max-width: 100%;
+    height: 300px;
+    max-height: 100%;
+    animation: pop-swirl .5s;
+    /* color: white; */
+}
+
+.user-info-input-box {
+    width: 500px;
+    font-size: 1rem;
+    height: 2rem;
+    margin: 0 auto;
+    border: 1px solid #0a8f19;
+    border-radius: 0;
+    padding-left: 0.5rem;
+    margin-bottom: 12px;
+    /* display: block; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+
+
