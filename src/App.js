@@ -12,6 +12,7 @@ function App() {
   const [showClickedItem, setShowClickedItem] = useState({})
   const [items, setItems] = useState([])
   const [cart, setCart] = useState('')
+  const [spin, setSpin] = useState('')
   const [money, setMoney] = useState(0)
   // const [requestClicked, setRequestClicked] = useState(false)
 
@@ -33,7 +34,7 @@ function handleRequest (item1, item2) {
 
   // <ConfirmModal cart = {cart} showClickedItem={showClickedItem} />
 
-alert(`You successfully swap't your item, good for you.`)
+alert(`You successfully swap't your item, good for you. You owe $${money}`)
 
   fetch(`http://localhost:9292/item/swap/${item1.id}/${item2.id}`, {
     method: "PATCH",
@@ -95,7 +96,7 @@ alert(`You successfully swap't your item, good for you.`)
     <Router>
     <Routes>
       <Route path='/' element={<Home showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem} items={items}/>}/>
-      <Route exact path="/request" element={<RequestPage setMoney={setMoney} handleRequest={handleRequest} cart={cart} setCart={setCart} userItems={userItems} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
+      <Route exact path="/request" element={<RequestPage spin={spin} setSpin={setSpin} setMoney={setMoney} handleRequest={handleRequest} cart={cart} setCart={setCart} userItems={userItems} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
       <Route exact path ="useritempage" element={<UserItemPage userItems={userItems} deleteItem={deleteItem} items={items} setItems={setItems} addItem={addItem}/>}/>
     
     </Routes>

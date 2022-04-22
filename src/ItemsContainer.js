@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect } from 'react';
 import Item from './Item';
 import './ItemsContainer.css'
 import Modal from './Modal';
@@ -10,6 +10,10 @@ function ItemsContainer({items, setShowClickedItem, showClickedItem,}) {
   function closeModal() {
     setShowClickedItem({})
   }
+
+  useEffect( () => {
+    closeModal()
+  },[])
 
   // console.log(showClickedItem)
 

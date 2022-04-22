@@ -1,7 +1,8 @@
-.userImage  {
+.card-container .userImage {
     width: 70%;
     height: 50%;
     border-radius: 50%; 
+
 } 
 .selected-item {
     width: 100%;

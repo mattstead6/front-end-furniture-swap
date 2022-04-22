@@ -5,7 +5,7 @@ import TradeImages from './TradeImages'
 // import ConfirmModal from './ConfirmModal';
 
 
-function RequestPage({ userItems, showClickedItem, setCart, cart, handleRequest, requestClicked, setMoney }) {
+function RequestPage({ userItems, showClickedItem, setCart, cart, handleRequest, requestClicked, setMoney, setSpin, spin}) {
 
     const [userInfo, setUserInfo] = useState({})
 
@@ -21,6 +21,7 @@ function RequestPage({ userItems, showClickedItem, setCart, cart, handleRequest,
             key={item.id}
             item={item}
             setCart={setCart}
+            setSpin={setSpin}
         />
     })
 
@@ -71,7 +72,7 @@ function RequestPage({ userItems, showClickedItem, setCart, cart, handleRequest,
                     <div className='cart-section'>
                         <h3>Select Item Below</h3>
                         <img className='traded-item' src={showClickedItem.image_url} alt='asdfsdf' />
-                        <img className='traded-item' src={'https://media2.giphy.com/media/OlYhrN7KKv7JIekBPd/giphy.gif?cid=790b7611f9eb79aee3c3ba922435f5d07a6fb987f5d03128&rid=giphy.gif&ct=s'} alt='asdfsdf' />
+                        {spin ? <img className='traded-item' src={spin} alt='asdfsdf' /> : null}
                         {cart.id ? <img class='traded-item' src={cart.image_url} alt='' /> :
                             null}
                         <div className='swap'>

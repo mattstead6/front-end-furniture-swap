@@ -43,7 +43,7 @@ return (
          <div className='new-item-form'>
         <form onSubmit={handleSubmit}>
             <div>
-            <label className="label">Item:
+            <label className="label-form">Item:
                 <div>
                 <input className="input-Box" name="item_name" value={formState.item_name} onChange={handleChange}></input>   
                 </div>
@@ -52,7 +52,7 @@ return (
 
 
             <div>
-            <label className="label">Description
+            <label className="label-form">Description
                 <div>
                 <input className="input-Box" name="description" value={formState.description} onChange={handleChange}></input>
                 </div>
@@ -60,7 +60,7 @@ return (
             </div>
 
         <div>
-        <label className="label">Original Pricing: 
+        <label className="label-form">Original Pricing: 
                 <div>
                 <input className="input-Box" name="original_pricing" value={formState.original_pricing} onChange={handleChange}></input>
         </div>
@@ -69,7 +69,7 @@ return (
 
 
         <div>       
-        <label className="label">Condition: 
+        <label className="label-form">Condition: 
             <div>
             <input className="input-Box" name="condition" value={formState.condition} onChange={handleChange}></input>
             </div>
@@ -77,7 +77,7 @@ return (
         </div>
 
         <div>
-        <label className="label">Image URL: 
+        <label className="label-form">Image URL: 
             <div>
                 <input className="input-Box" name="image_url" value={formState.image_url} onChange={handleChange}></input>
             </div>
