@@ -93,7 +93,7 @@ function handleRequest (item1, item2) {
 
     <Router>
     <Routes>
-      <Route path='/' element={<Home showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem} items={items}/>}/>
+      <Route path='/' element={<Home showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem} items={items} />}/>
       <Route exact path="/request" element={<RequestPage handleRequest={handleRequest} cart={cart} setCart={setCart} userItems={userItems} showClickedItem={showClickedItem} setShowClickedItem={setShowClickedItem}/>}/>
       <Route exact path ="useritempage" element={<UserItemPage userItems={userItems} deleteItem={deleteItem} items={items} setItems={setItems} addItem={addItem}/>}/>
     

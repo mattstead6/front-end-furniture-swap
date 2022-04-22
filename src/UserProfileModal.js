@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './UserProfileModal.css'
 
 function UserProfileModal({userItems}) {
 
@@ -7,7 +7,7 @@ function UserProfileModal({userItems}) {
   return (
       <>
           <div className='modal'> 
-        <form>
+        <form className="editProfilForm">
             <label>Name:
             <br />
             <input className="user-info-input-box" type="text" name="full_name" placeholder={userItems.full_name} />
@@ -33,6 +33,7 @@ function UserProfileModal({userItems}) {
             <br />
 
             <input
+                className="submitPorfileButton"
                 type="submit"
                 name="submit"
                 value="Submit Changes"

@@ -18,7 +18,10 @@ function UserItems({item, deleteItem}) {
 
       <div className="btnContainer">
         <button onClick={() => deleteItem(item)} className="deleteButton">Delete</button>
+
+        <button onClick={() => deleteItem(item)} className="deleteButton">Edit</button>
       </div>
+      
 
     </div>
     

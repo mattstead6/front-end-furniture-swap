@@ -4,7 +4,7 @@ import './UserItemPage.css'
 import { useNavigate } from "react-router-dom";
 import Form from './Form';
 import UserProfileModal from './UserProfileModal';
-import './UserProfileModal.css'
+
 
 function UserItemPage({userItems, deleteItem, items1, setItems, addItem}) {
 
@@ -32,14 +32,14 @@ function UserItemPage({userItems, deleteItem, items1, setItems, addItem}) {
           <button className="backToHomeButton" onClick={() => navigate("/")}> BACK TO HOME </button>
         </div>
 
-        {showEditForm? <UserProfileModal userItems={userItems}/> : null}
+        {showEditForm? null: <UserProfileModal userItems={userItems}/>}
 
         <div className="userInfo">
-          <img className="userImage" img_src={image} alt={full_name}></img>
+          <img className="userImage" src={image} alt={full_name}></img>
           <h1>{full_name}</h1>
           <h3>Location: {location}</h3>
           <h3>Bio: {bio}</h3>
-          <button onClick={handleUserInfoEditClick}>Edit</button>
+          <button className="editUserButton"onClick={handleUserInfoEditClick}>Edit</button>
         </div>
             
         <div className="useritemspagecontainer">

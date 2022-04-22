@@ -5,14 +5,14 @@
     transform: translate(-50%, -50%);
     width: 600px;
     max-width: 100%;
-    height: 300px;
+    height: 500px;
     max-height: 100%;
     animation: pop-swirl .5s;
     /* color: white; */
 }
 
 .user-info-input-box {
-    width: 500px;
+    width: 400px;
     font-size: 1rem;
     height: 2rem;
     margin: 0 auto;
@@ -25,5 +25,30 @@
     /* align-items: center; */
 }
 
+.submitPorfileButton {
+    border-color: gray;
+    background-color: white;
+    font-size: 18px;
+    border: solid #0a8f19;
+    border-width: thin;
+    font-size: 1.5;
+    font-weight: bold;
+    padding: 10px 12px;
+}
+
+label {
+    color: white;
+}
+
+.editProfilForm {
+    width: 400px;
+    height: 400px;
+    position:relative; 
+    margin-left: auto;
+    margin-right:auto;
+    display: block;
+    padding-bottom: 8px;
+    padding-top: 60px;
+}
 
 
